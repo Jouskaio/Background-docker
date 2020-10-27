@@ -11,26 +11,23 @@ cNOCOLOR='\033[0m' # No Color
 
 
 
-printf "${cH1}Stopping container tpDockHTTP ... \n"
+printf "${cH1}Removing container tpDockHTTP ... \n"
 printf "${cP}"
 docker stop tpDockHTTP
+docker container rm tpDockHTTP
 printf "${cNOCOLOR}"
 
-printf "${cH1}Stopping container tpDockBDD ... \n"
+printf "${cH1}Removing container tpDockBDD ... \n"
 printf "${cP}"
 docker stop tpDockBDD
+docker container rm tpDockBDD
 printf "${cNOCOLOR}"
 
 printf "${cH1}Removing container tpDockSCRIPT ... \n"
 printf "${cP}"
 docker stop tpDockSCRIPT
+docker container rm tpDockSCRIPT
 printf "${cNOCOLOR}"
-
-printf "${cH1}Removing container tpDockBDD ... \n"
-printf "${cP}"
-docker container rm tpDockBDD
-printf "${cNOCOLOR}"
-
 
 printf "${cH1}Removing network tpDock ... \n"
 printf "${cP}"
