@@ -19,8 +19,8 @@ printf "${cNOCOLOR}"
 
 printf "${cH1}Removing container tpDockBDD ... \n"
 printf "${cP}"
-docker stop tpDockBDD
-docker container rm tpDockBDD
+docker stop tpdockbdd
+docker container rm tpdockbdd
 printf "${cNOCOLOR}"
 
 printf "${cH1}Removing container tpDockSCRIPT ... \n"
