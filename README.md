@@ -1,5 +1,7 @@
 # Explication du TP
 
+*TP visant à lier trois containers NGINX, Node et Mongo avec la possibilité d'y accéder sur chacun des ports. Le port utulisé par NGINX et Node doivent renvoyer la page index du site tandis que le port Mongo doit être uniquement utilisé pour la data (pas de visuel du site).*
+
 ## Choix des langages
 
 Pour ce TP j'ai souhaité développer une application en React. Pour la partie back-end, j'ai pris un des langages les plus communs avec React à savoir MongoDB.
@@ -51,3 +53,5 @@ Pour créer le projet, il suffit de :
     - rentrer dans le répertoire
     - Faire la commande `sh launch.sh`
     - Pour arrêter les containers il suffit de faire `sh kill.sh`
+
+Enjoy !
