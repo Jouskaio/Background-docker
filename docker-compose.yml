@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+    database:
+        container_name: db
+        image: mariadb:10.3
+        networks:
+            - tp-docker
+        volumes:
+            - ${PWD}/create.sql:/docker-entrypoint-initdb.d/create.sql
+            - ${PWD}/.data:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: azerty
+    
+    script:
+        build: .
+        container_name: script
+        volumes:
+            - ${PWD}/monsite:/var/www/monsite
+        ports:
+            - 9000:80
+
+    http:
+        container_name: http
+        image: nginx:1.19
+        links:
+            - database
+        volumes:
+            - ${PWD}/monsite:/var/www/monsite
+            - ${PWD}/default.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - 8080:80
+networks:
+    tp-docker:
+        name: tp-docker
+volumes:
+    db_data: {}
