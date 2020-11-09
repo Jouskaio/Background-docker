@@ -1,6 +1,6 @@
 # Explication du TP
 
-*TP visant à lier trois containers NGINX, PHP et Mongo avec la possibilité d'y accéder sur chacun des ports. Le port utilisé par NGINX et PHP doivent renvoyer la page index du site tandis que le port Mongo doit être uniquement utilisé pour la data (pas de visuel du site).*
+*TP visant à lier trois containers NGINX, PHP et PostSQL avec la possibilité d'y accéder sur chacun des ports. Le port utilisé par NGINX et PHP doivent renvoyer la page index du site tandis que le port PostSQL doit être uniquement utilisé pour la data (pas de visuel du site).*
 
 ## Lancement du projet
 

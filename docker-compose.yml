@@ -6,9 +6,11 @@ services:
         networks:
             - tp-docker
         volumes:
-            - ${PWD}/create.sql:/docker-entrypoint-initdb.d/create.sql
-            - ${PWD}/.data:/var/lib/mysql
+            - ./create.sql:/docker-entrypoint-initdb.d/create.sql
+            - ./.data:/var/lib/mysql
         restart: always
+        ports:
+            - 3306:3306
         environment:
             MYSQL_ROOT_PASSWORD: azerty
     
