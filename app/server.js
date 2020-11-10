@@ -3,7 +3,7 @@ const assert = require('assert');
 
 (async function() {
     // Connection URL
-    const url = 'mongodb://tpdockbdd:27017/tpdock';
+    const url = 'mongodb://tpDockDB:27017/tpdock';
     // Database Name
     const dbName = 'tpdockbdd';
     const client = new MongoClient(url);

@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  database:
+    container_name: tpDockDB
+    image: mongo:3.6.20-xenial
+    networks:
+      - tp-dock
+    ports: 
+      - 27017:27017
+    environment: 
+      MONGO_INITDB_DATABASE: tpdock
+
+
+  script:
+    build: .
+    container_name: tpDockSCRIPT
+    networks:
+      - tp-dock
+    ports:
+      - 5000:5000
+
+  web:
+    container_name: tpDockHTTP
+    image: nginx:1.19
+    networks:
+      - tp-dock
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    volumes_from:
+      - script
+    ports:
+      - 8080:80
+
+networks:
+  tp-dock:
+    name: tp-dock
